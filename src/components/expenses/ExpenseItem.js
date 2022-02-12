@@ -1,7 +1,7 @@
 //js code will tranform to jsx code on the browser
 import './ExpenseItem.css';
 import ExpenseDate from "./ExpenseDate";
-import Card from "./Card";
+import Card from "../ui/Card";
 
 function ExpenseItem(props) {
     return (<Card className="expense-item">
