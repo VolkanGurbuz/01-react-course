@@ -46,21 +46,25 @@ const ExpenseForm = () => {
         };
 
         console.log(expenseData);
+        setEnteredTitle('');
+        setEnteredAmount('');
+        setEnteredDate('');
     };
 
     return <form onSubmit={submitHandler}>
         <div className="new-expense__controls">
             <div className="new-expense__control">
                 <label>Title</label>
-                <input type="text" onChange={titleChangeHandler}/>
+                {/*we change the state, we also change input*/}
+                <input type="text" value={enteredTitle} onChange={titleChangeHandler}/>
             </div>
             <div className="new-expense__control">
                 <label>Amount</label>
-                <input type="text" onChange={amountChangeHandle}/>
+                <input type="text" value={enteredAmount} onChange={amountChangeHandle}/>
             </div>
             <div className="new-expense__control">
                 <label>Date</label>
-                <input type="date" min="2019-01-01" max="2022-12-31" onChange={dateChangeHandle}/>
+                <input type="date" value={enteredDate} min="2019-01-01" max="2022-12-31" onChange={dateChangeHandle}/>
             </div>
         </div>
         <div className="new-expense__actions">
