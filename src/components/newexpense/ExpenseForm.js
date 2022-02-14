@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./ExpenseForm.css"
 
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 
     const [enteredTitle, setEnteredTitle] = useState('');
     //multiple states pair component
@@ -46,6 +46,7 @@ const ExpenseForm = () => {
         };
 
         console.log(expenseData);
+        props.onSaveExpenseData(expenseData);
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');
