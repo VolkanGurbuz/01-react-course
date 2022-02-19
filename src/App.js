@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import NewExpense from "./components/newexpense/NewExpense";
 
 
-const DUMMY_EXPENSES = [{id: 'e', title: 'new desk', amount: 450, date: new Date(2021, 5, 12)}, {
+const DUMMY_EXPENSES = [{id: 'e', title: 'new desk', amount: 450, date: new Date(2020, 5, 12)}, {
     id: 'e2',
     title: 'new des2k',
     amount: 410,

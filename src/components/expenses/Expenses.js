@@ -12,6 +12,11 @@ function Expenses(props) {
         setFilteredYear(selectedYear);
     };
 
+    //new array wil return original array will not touch
+    const filteredExpenses = props.items.filter(expense => {
+        return expense.date.getFullYear().toString() === filteredYear;
+    });
+
     //set id for individual elements if no any id , we can use (expense. index)
     //function to pass on map
 
@@ -19,9 +24,9 @@ function Expenses(props) {
         <div>
             <Card className="expenses">
                 <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
-                {props.items.map((expense) => (<ExpenseItem key={expense.id} title={expense.title}
-                                                            amount={expense.amount}
-                                                            date={expense.date}/>))}
+                {filteredExpenses.map((expense) => (<ExpenseItem key={expense.id} title={expense.title}
+                                                                 amount={expense.amount}
+                                                                 date={expense.date}/>))}
 
             </Card></div>);
 
