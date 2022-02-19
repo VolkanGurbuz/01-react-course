@@ -3,6 +3,7 @@ import './Expenses.css'
 import Card from "../ui/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import React, {useState} from "react";
+import ExpensesList from "./ExpensesList";
 
 function Expenses(props) {
 
@@ -18,14 +19,6 @@ function Expenses(props) {
     });
 
 
-    let expensesContent = <p>No expenses found.</p>
-
-    if (filteredExpenses.length > 0) {
-        expensesContent = filteredExpenses.map((expense) => (<ExpenseItem key={expense.id} title={expense.title}
-                                                                          amount={expense.amount}
-                                                                          date={expense.date}/>));
-    }
-
     //set id for individual elements if no any id , we can use (expense. index)
     //function to pass on map
 
@@ -33,7 +26,7 @@ function Expenses(props) {
         <div>
             <Card className="expenses">
                 <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
-                {expensesContent}
+                <ExpensesList items={filteredExpenses}/>
             </Card></div>);
 
 }
